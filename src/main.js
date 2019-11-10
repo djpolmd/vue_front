@@ -11,10 +11,12 @@ window.axios=axios
 window.token= localStorage.getItem('token');
 window.user= localStorage.getItem('user');
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
+axios.defaults.baseURL = 'http://back.test:8000/api';
 
 axios.defaults.headers.common['Authorization'] = "Bearer " + window.token;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
+
+const vuetifyOptions = { }
 
 Vue.use(Vuetify)
 
@@ -26,5 +28,6 @@ new Vue({
     router,
     store,
     components: { App },
-    template: '<App/>'
+    template: '<App/>',
+    vuetify: new Vuetify(vuetifyOptions)
 })

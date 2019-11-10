@@ -1,14 +1,12 @@
 <template>
     <v-app>
         <v-toolbar>
-            <v-toolbar-title><v-btn flat :to="{name:'Home'}">{{title}}</v-btn></v-toolbar-title>
+            <v-toolbar-title><v-btn text :to="{name:'Home'}">{{title}}</v-btn></v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat exact  v-for="(menu,index) in menus" :key='index' :to={name:menu.route}>
+                <v-btn text exact  v-for="(menu,index) in menus" :key='index' :to={name:menu.route}>
                     {{menu.name}}
                 </v-btn>
-
-
             </v-toolbar-items>
         </v-toolbar>
 
@@ -25,7 +23,7 @@
         components:{Loader},
         data () {
             return {
-                title:"PhoneBook",
+                title:"Clients List",
                 loader:true
 
             }
